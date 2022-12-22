@@ -23,9 +23,17 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <Tasks tasks={tasks} />
+      <Tasks 
+        tasks={tasks} 
+        onDelete={this.deleteTaskHandler}
+        />
     </div>
   );
+
+  const deleteTaskHandler = (id) => {
+    console.log('deleteTaskHandler: ', id);
+  }
+
 }
 
 export default App;
