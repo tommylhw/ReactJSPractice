@@ -16,7 +16,7 @@ class Task extends Component {
           />
           
         </h3>
-        <p>{this.props.task.day}</p>
+        <p>{this.props.task.date}</p>
       </div>
     );
   }

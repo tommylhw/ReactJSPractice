@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
+import AddTask from './components/AddTask';
 
 const App = () => {
   
@@ -9,22 +10,26 @@ const App = () => {
     {
       id: 1,
       content: 'content01',
-      day: 'day01',
-      reminder: true
+      date: 'day01',
+      reminder: false
     },
     {
       id: 2,
       content: 'content02',
-      day: 'day02',
-      reminder: true
+      date: 'day02',
+      reminder: false
     },
     {
       id: 3,
       content: 'content03',
-      day: 'day03',
-      reminder: true
+      date: 'day03',
+      reminder: false
     }
   ]);
+
+  const addTaskHandler = (task) => {
+    console.log(task);
+  }
 
   const deleteTaskHandler = (selectedId) => {
     console.log('deleteTaskHandler: ', selectedId);
@@ -41,6 +46,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
+      <AddTask onAdd={addTaskHandler}/>
       { tasks.length === 0 ? 'No tasks here' : <Tasks tasks={tasks} onDelete={deleteTaskHandler} onToggle={toggleHandler} /> }
     </div>
   );
