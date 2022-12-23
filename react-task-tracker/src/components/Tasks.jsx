@@ -8,11 +8,22 @@ class Tasks extends Component {
     return (
       <div>
         {this.props.tasks.map((task) => (
-          <Task key={task.id} task={task} />
+          <Task key={task.id} task={task} onDelete={this.props.onDelete} onToggle={this.props.onToggle} />
         ))}
       </div>
     );
   }
 }
+
+// using function
+/* const Tasks = ({ tasks, onDelete }) => {
+  return (
+    <div>
+      {tasks.map((task) => (
+        <Task key={task.id} task={task} onDelete={() => onDelete(task.id)} />
+      ))}
+    </div>
+  );
+} */
  
 export default Tasks;
