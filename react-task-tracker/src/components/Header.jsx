@@ -12,8 +12,8 @@ class Header extends Component {
       <header className='header'>
         <h1>Task Tracker</h1>
         <Button 
-          color='green' 
-          text='Add'
+          color={this.props.showAdd ? 'red' : 'green'}
+          text={this.props.showAdd ? 'Close' : 'Add'}
           onClick={this.props.onAddClicked}
         />
       </header>

@@ -61,7 +61,7 @@ const App = () => {
 
     return (
       <div className="container">
-        <Header onAddClicked={() => setShowAddTask(!showAddTask)}/>
+        <Header onAddClicked={() => setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
         {showAddTask && <AddTask onAdd={addTaskHandler} />}
         {tasks.length === 0 ? (
           "No tasks here"
