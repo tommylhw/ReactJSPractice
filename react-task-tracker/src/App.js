@@ -17,7 +17,7 @@ const App = () => {
   useEffect(() => {
     const getTasks = async () => {
       const tasksFromServer = await fetchTasks();
-      setTasks(tasksFromServer);
+      setTasks(tasksFromServer); // import the data from the server
     }
 
     getTasks()
@@ -135,3 +135,6 @@ const App = () => {
 };
 
 export default App;
+
+
+
