@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
@@ -8,29 +8,27 @@ const App = () => {
 
   const [showAddTask, setShowAddTask] = useState(false);
  
-  const [tasks, setTasks] = useState([
-    // *Always keep the state in App.js
-    {
-      id: 1,
-      content: "content01",
-      date: "day01",
-      reminder: false,
-    },
-    {
-      id: 2,
-      content: "content02",
-      date: "day02",
-      reminder: false,
-    },
-    {
-      id: 3,
-      content: "content03",
-      date: "day03",
-      reminder: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]); // *Always keep the state in App.js
 
+  /* Backend */
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+      setTasks(tasksFromServer);
+    }
 
+    getTasks()
+  }, []);
+
+  const fetchTasks = async () => {
+    const res = await fetch('http://localhost:5000/tasks');
+    const data = await res.json();
+
+    console.log(data);
+    return data;
+  }
+
+  /* Backend */
 
   const addTaskHandler = (task) => {
     console.log(task);
@@ -42,8 +40,14 @@ const App = () => {
     setTasks([...tasks, newTask]);
   };
 
-  const deleteTaskHandler = (selectedId) => {
+  const deleteTaskHandler = async (selectedId) => {
     console.log("deleteTaskHandler: ", selectedId);
+
+    /* Backend */
+    await fetch(`http://localhost:5000/tasks/${selectedId}`, {
+      method: 'DELETE'
+    })
+    /* Backend */
 
     setTasks(tasks.filter((task) => task.id !== selectedId));
   };
