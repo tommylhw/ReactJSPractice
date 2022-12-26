@@ -15,8 +15,14 @@
     {
       "content": "asfasf",
       "date": "asfasdf",
-      "reminder": false,
+      "reminder": true,
       "id": 4
+    },
+    {
+      "content": "test",
+      "date": "test",
+      "reminder": false,
+      "id": 5
     }
   ]
 }
