@@ -6,7 +6,7 @@ import AddTask from "./components/AddTask";
 
 const App = () => {
 
-  var [showAddTask, setShowAddTask] = useState(false);
+  const [showAddTask, setShowAddTask] = useState(false);
 
   const [tasks, setTasks] = useState([
     // *Always keep the state in App.js
@@ -57,11 +57,11 @@ const App = () => {
       )
     );
   };
-
+ 
 
     return (
       <div className="container">
-        <Header addClicked={() => setShowAddTask = (!setShowAddTask)}/>
+        <Header onAddClicked={() => setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
         {showAddTask && <AddTask onAdd={addTaskHandler} />}
         {tasks.length === 0 ? (
           "No tasks here"

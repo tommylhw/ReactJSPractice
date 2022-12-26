@@ -6,15 +6,15 @@ class Header extends Component {
 
   render() { 
 
-    console.log(this.props);
+    // console.log(this.props);
 
     return (
       <header className='header'>
         <h1>Task Tracker</h1>
         <Button 
-          color='green' 
-          text='Add'
-          onClick={this.props.addClicked}
+          color={this.props.showAdd ? 'red' : 'green'}
+          text={this.props.showAdd ? 'Close' : 'Add'}
+          onClick={this.props.onAddClicked}
         />
       </header>
     );
