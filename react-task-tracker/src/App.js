@@ -5,6 +5,9 @@ import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 
 const App = () => {
+
+  var [showAddTask, setShowAddTask] = useState(false);
+
   const [tasks, setTasks] = useState([
     // *Always keep the state in App.js
     {
@@ -27,8 +30,16 @@ const App = () => {
     },
   ]);
 
+
+
   const addTaskHandler = (task) => {
     console.log(task);
+
+    const id = Math.floor(Math.random() * 10000) + 1;
+    console.log(id);
+
+    const newTask = {id, ...task};
+    setTasks([...tasks, newTask]);
   };
 
   const deleteTaskHandler = (selectedId) => {
@@ -47,24 +58,23 @@ const App = () => {
     );
   };
 
-  // test
-  // test 02
 
-  return (
-    <div className="container">
-      <Header />
-      <AddTask onAdd={addTaskHandler} />
-      {tasks.length === 0 ? (
-        "No tasks here"
-      ) : (
-        <Tasks
-          tasks={tasks}
-          onDelete={deleteTaskHandler}
-          onToggle={toggleHandler}
-        />
-      )}
-    </div>
-  );
+    return (
+      <div className="container">
+        <Header addClicked={() => setShowAddTask = (!setShowAddTask)}/>
+        {showAddTask && <AddTask onAdd={addTaskHandler} />}
+        {tasks.length === 0 ? (
+          "No tasks here"
+        ) : (
+          <Tasks
+            tasks={tasks}
+            onDelete={deleteTaskHandler}
+            onToggle={toggleHandler}
+          />
+        )}
+      </div>
+    );
+
 };
 
 export default App;

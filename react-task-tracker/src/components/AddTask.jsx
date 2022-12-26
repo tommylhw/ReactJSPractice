@@ -13,7 +13,7 @@ const AddTask = ({ onAdd }) => {
   const [date, setDate] = useState('')
   const [reminder, setReminder] = useState(false)
 
-  const onSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
 
     if (!content) {
@@ -26,8 +26,10 @@ const AddTask = ({ onAdd }) => {
     setReminder(false)
   }
 
+
+
   return (
-    <form className='add-form' onSubmit={onSubmit}>
+    <form className='add-form' onSubmit={handleSubmit}>
       <div className='form-control'>
         <label>Task</label>
         <input type='text' placeholder='Add task' value={content} onChange={(e) => setContent(e.target.value)} />

@@ -6,21 +6,23 @@ class Header extends Component {
 
   render() { 
 
+    console.log(this.props);
+
     return (
       <header className='header'>
         <h1>Task Tracker</h1>
         <Button 
           color='green' 
           text='Add'
-          onClick={this.addHandler}
+          onClick={this.props.addClicked}
         />
       </header>
     );
   }
 
-  addHandler = () => {
+  /* addHandler = () => {
     console.log('addHandler');
-  }
+  } */
 }
  
 export default Header;
