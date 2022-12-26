@@ -7,10 +7,10 @@
       "reminder": false
     },
     {
-      "id": 2,
-      "content": "content02",
-      "date": "day02",
-      "reminder": false
+      "content": "02",
+      "date": "02",
+      "reminder": true,
+      "id": 2
     }
   ]
 }

@@ -28,16 +28,34 @@ const App = () => {
     return data;
   }
 
+  const fetchTask = async (selectedId) => {
+    const res = await fetch(`http://localhost:5000/tasks/${selectedId}`);
+    const data = await res.json();
+
+    return data;
+  }
   /* Backend */
 
-  const addTaskHandler = (task) => {
-    console.log(task);
+  const addTaskHandler = async (task) => {
+    /* Backend */
+    const res = await fetch('http://localhost:5000/tasks', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(task)
+    });
 
-    const id = Math.floor(Math.random() * 10000) + 1;
-    console.log(id);
+    const data = await res.json();
+
+    setTasks([...tasks, data]);
+    /* Backend */
+
+
+    /* const id = Math.floor(Math.random() * 10000) + 1;
 
     const newTask = {id, ...task};
-    setTasks([...tasks, newTask]);
+    setTasks([...tasks, newTask]); */
   };
 
   const deleteTaskHandler = async (selectedId) => {
@@ -52,16 +70,30 @@ const App = () => {
     setTasks(tasks.filter((task) => task.id !== selectedId));
   };
 
-  const toggleHandler = (selectedId) => {
+  const toggleHandler = async (selectedId) => {
     console.log("toggleHandler: ", selectedId);
+
+    /* Backend */
+    const taskToToggle = await fetchTask(selectedId);
+    const updTask = {...taskToToggle, reminder: !taskToToggle.reminder};
+
+    const res = await fetch(`http://localhost:5000/tasks/%{selectedId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(updTask)
+    });
+
+    const data = await res.json();
+    /* Backend */
 
     setTasks(
       tasks.map((task) =>
-        task.id === selectedId ? { ...task, reminder: !task.reminder } : task
+        task.id === selectedId ? { ...task, reminder: data.reminder } : task
       )
     );
   };
- 
 
     return (
       <div className="container">
