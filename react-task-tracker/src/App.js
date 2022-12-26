@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import "./App.css";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
+import Footer from "./components/Footer";
+import About from "./components/About";
 
 const App = () => {
 
@@ -96,19 +99,36 @@ const App = () => {
   };
 
     return (
-      <div className="container">
-        <Header onAddClicked={() => setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
-        {showAddTask && <AddTask onAdd={addTaskHandler} />}
-        {tasks.length === 0 ? (
-          "No tasks here"
-        ) : (
-          <Tasks
-            tasks={tasks}
-            onDelete={deleteTaskHandler}
-            onToggle={toggleHandler}
-          />
-        )}
-      </div>
+      <Router>
+        <div className="container">
+          <Header onAddClicked={() => setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
+
+          <Routes>
+            <Route 
+              path="/"
+              element={
+                <>
+                  {showAddTask && <AddTask onAdd={addTaskHandler} />}
+                  {tasks.length === 0 ? (
+                    "No tasks to show"
+                  ) : (
+                    <Tasks
+                      tasks={tasks}
+                      onDelete={deleteTaskHandler}
+                      onToggle={toggleHandler}
+                    />
+                  )}
+                </>
+              }
+            />
+          
+            <Route path="/About" element={<About />} />
+          </Routes>
+          
+          <Footer />
+        </div>
+      </Router>
+      
     );
 
 };
