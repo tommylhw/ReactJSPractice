@@ -6,7 +6,7 @@ class Header extends Component {
 
   render() { 
 
-    console.log(this.props);
+    // console.log(this.props);
 
     return (
       <header className='header'>
@@ -14,7 +14,7 @@ class Header extends Component {
         <Button 
           color='green' 
           text='Add'
-          onClick={this.props.addClicked}
+          onClick={this.props.onAddClicked}
         />
       </header>
     );
