@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
+import { useLocation } from 'react-router-dom';
 import Button from './Button';
 
-class Header extends Component {
-  state = {  } 
-
+/* class Header extends Component {
   render() { 
-
-    // console.log(this.props);
 
     return (
       <header className='header'>
@@ -19,10 +16,24 @@ class Header extends Component {
       </header>
     );
   }
+} */
 
-  /* addHandler = () => {
-    console.log('addHandler');
-  } */
+const Header = ({ showAdd, onAddClicked }) => {
+
+  const location = useLocation();
+
+  return (
+    <header className='header'>
+      <h1>Task Tracker</h1>
+      {location.pathname === '/' && (
+        <Button 
+        color={showAdd ? 'red' : 'green'}
+        text={showAdd ? 'Close' : 'Add'}
+        onClick={onAddClicked}
+        />
+      )}
+    </header>
+  )
 }
- 
+
 export default Header;
