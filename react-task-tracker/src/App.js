@@ -97,6 +97,7 @@ const App = () => {
       )
     );
   };
+  
 
     return (
       <Router>
@@ -137,7 +138,4 @@ export default App;
 
 
 
-
-
-
-// changed here in Backend
+// Conflict resolved by typing the correct code
