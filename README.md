@@ -2,28 +2,12 @@
 
 ReactJS Practice
 
-## Usage
+## Project List
 
-### Install dependencies
+### react-task-tracker
 
-```
-npm install
-```
+### react-hooks
 
-### Run React dev server (http://localhost:3000)
+### Vite Project
 
-```
-npm start
-```
-
-### Run the JSON server (http://localhost:5000)
-
-```
-npm run server
-```
-
-### To build for production
-
-```
-npm run build
-```
+### React Native
