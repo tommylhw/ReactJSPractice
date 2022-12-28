@@ -1,8 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity  } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import registerNNPushToken from 'native-notify';
 
 const App = () => {
+
+  registerNNPushToken(5506, 'pl82NmdSvbD6VMwfbcC5fr');
 
   const [count, setCount] = useState(0);
 
