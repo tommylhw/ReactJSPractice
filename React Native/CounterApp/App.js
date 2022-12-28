@@ -1,11 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import registerNNPushToken from 'native-notify';
 
-/* const App = () => {
-
-  registerNNPushToken(5506, 'pl82NmdSvbD6VMwfbcC5fr');
+const App = () => {
 
   const [count, setCount] = useState(0);
 
@@ -87,18 +84,5 @@ const styles = StyleSheet.create({
 
 
 });
-
-export default App;
- */
-
-const App = () => {
-  return (
-    <View>
-
-      <Text>HelloWorld</Text>
-      
-    </View>
-  )
-}
 
 export default App;
