@@ -5,11 +5,11 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import HomeScreen from './screens/HomeScreen';
 import AnotherScreen from './screens/AnotherScreen';
 import CounterScreen from './screens/CounterScreen';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
