@@ -31,7 +31,7 @@ const CounterScreen = ({ navigation }) => {
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => navigation.navigate('Another')}>
-        <Text style={styles.anotherScreenBtn}>Go to AnotherScreen</Text>
+        <Text style={styles.anotherScreenBtn}>Go to Another Screen</Text>
       </TouchableOpacity>
 
     </View>
