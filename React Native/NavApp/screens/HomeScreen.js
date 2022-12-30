@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
 import { ComponentStyleSheet } from '../styles/ComponentStyleSheet';
 import { FontAwesome } from '@expo/vector-icons';
+
 import CustomNavBtn from '../components/CustomNavBtn';
 
 

@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 
 
@@ -9,6 +10,20 @@ import CustomDrawer from './components/CustomDrawer';
 
 import HomeScreen from './screens/HomeScreen';
 import MenuScreen from './screens/MenuScreen';
+
+import DropdownListScreen from './screens/DropdownListScreen';
+
+const MenuNavigator = () => {
+
+  const Stack = createNativeStackNavigator();
+
+  return (
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name='Menu' component={MenuScreen} />
+        <Stack.Screen name='DropDownList' component={DropdownListScreen} />
+      </Stack.Navigator>
+  )
+}
 
 const App = () => {
 
@@ -25,7 +40,7 @@ const App = () => {
         }} 
         drawerContent={(props) => <CustomDrawer {... props} />}>
         <Drawer.Screen name='Home' component={HomeScreen} options={drawerItemList.home} />
-        <Drawer.Screen name='Menu' component={MenuScreen} options={drawerItemList.menu} />
+        <Drawer.Screen name='Menu' component={MenuNavigator} options={drawerItemList.menu} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
@@ -47,15 +62,6 @@ const drawerItemList = {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
 const drawerOption = StyleSheet.create({
   screenOptions: {
     headerStyle: { backgroundColor: 'papayawhip' },
@@ -70,6 +76,15 @@ const drawerOption = StyleSheet.create({
     activeBackgroundColor: 'red'
   },
 
+});
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 
 export default App;

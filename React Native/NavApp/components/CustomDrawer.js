@@ -21,6 +21,12 @@ const CustomDrawer = (props) => {
           inactiveTintColor='red'
         />
       </DrawerContentScrollView>
+
+      {/* footer */}
+      <View>
+        <Text>HelloWorld</Text>
+        <Text>This is the footer</Text>
+      </View>
     </View>
    );
 }
