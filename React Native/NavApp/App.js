@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 
 import HomeScreen from './screens/HomeScreen';
-import SettingScreen from './screens/SettingScreen';
+import MenuScreen from './screens/MenuScreen';
 
 const App = () => {
 
@@ -15,7 +15,7 @@ const App = () => {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
         <Drawer.Screen name='Home' component={HomeScreen} />
-        <Drawer.Screen name='Setting' component={SettingScreen} />
+        <Drawer.Screen name='Menu' component={MenuScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

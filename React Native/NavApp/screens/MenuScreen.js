@@ -4,7 +4,11 @@ import {FontAwesome5} from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const SettingScreen = () => {
+import { ComponentStyleSheet } from '../styles/ComponentStyleSheet';
+
+import CustomNavBtn from '../components/CustomNavBtn';
+
+const MenuScreen = () => {
 
   const Stack = createNativeStackNavigator();
 
@@ -13,8 +17,10 @@ const SettingScreen = () => {
     <View style={styles.body}>
       
       <View>
-        <Text>Setting</Text>
+        <Text>Menu</Text>
       </View>
+
+      <View style={ComponentStyleSheet.customNavBtnContainer}><CustomNavBtn /></View>
 
     </View>
    );
@@ -29,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SettingScreen;
+export default MenuScreen;
