@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import FontAwesome from '@expo/vector-icons/FontAwesome5';
+import { FontAwesome5, MaterialIcons, Octicons } from '@expo/vector-icons';
 
 const CustomNavBtn = () => {
 
@@ -10,10 +10,9 @@ const CustomNavBtn = () => {
   return ( 
     
       <TouchableOpacity onPress={() => useNav.toggleDrawer()}>
-        <FontAwesome name='bars' size={30} />
+        <Octicons name='three-bars' size={30} color='#1f2430'/>
       </TouchableOpacity>
-   
-          
+     
    );
 }
 

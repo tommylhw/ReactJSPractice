@@ -2,7 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
+import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 
+
+import CustomDrawer from './components/CustomDrawer';
 
 import HomeScreen from './screens/HomeScreen';
 import MenuScreen from './screens/MenuScreen';
@@ -13,12 +16,35 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
-        <Drawer.Screen name='Home' component={HomeScreen} />
-        <Drawer.Screen name='Menu' component={MenuScreen} />
+      <Drawer.Navigator 
+        initialRouteName='Home' 
+        screenOptions={drawerOption.screenOptions} 
+        drawerContentOptions={{
+          activeTintColor: 'red',
+          itemStyle: { marginVertical: 30 },
+        }} 
+        drawerContent={(props) => <CustomDrawer {... props} />}>
+        <Drawer.Screen name='Home' component={HomeScreen} options={drawerItemList.home} />
+        <Drawer.Screen name='Menu' component={MenuScreen} options={drawerItemList.menu} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
+}
+
+const drawerItemList = {
+  home: {
+    title: 'Home Page',
+    drawerIcon: (({focused, size}) => (
+      <FontAwesome5 name="home" size={20} color={focused ? '#1684fd' : '#656566'} />
+    ))
+  },
+
+  menu: {
+    title: 'Menu Page',
+    drawerIcon: (({focused, size}) => (
+      <MaterialIcons name='menu-book' size={20} color={focused ? '#1684fd' : '#656566'} />
+    ))
+  }
 }
 
 const styles = StyleSheet.create({
@@ -28,6 +54,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+});
+
+const drawerOption = StyleSheet.create({
+  screenOptions: {
+    headerStyle: { backgroundColor: 'papayawhip' },
+    headerShown: false,
+    drawerStyle: {
+      width: '70%'
+    },
+  },
+
+  drawerContentOptions: {
+    activeTintColor: 'red',
+    activeBackgroundColor: 'red'
+  },
+
 });
 
 export default App;

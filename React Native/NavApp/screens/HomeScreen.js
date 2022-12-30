@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
-import {FontAwesome5} from '@expo/vector-icons';
 import { ComponentStyleSheet } from '../styles/ComponentStyleSheet';
-
+import { FontAwesome } from '@expo/vector-icons';
 import CustomNavBtn from '../components/CustomNavBtn';
 
 
@@ -11,7 +10,7 @@ const HomeScreen = () => {
     <View style={styles.body}>
       <StatusBar style='auto' />
 
-      <Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text>
+      <Text>Home</Text>
       
       <View style={ComponentStyleSheet.customNavBtnContainer}><CustomNavBtn /></View>
     
