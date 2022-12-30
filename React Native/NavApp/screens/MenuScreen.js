@@ -20,6 +20,8 @@ const MenuScreen = () => {
         <Text>Menu</Text>
       </View>
 
+      
+
       <View style={ComponentStyleSheet.customNavBtnContainer}><CustomNavBtn /></View>
 
     </View>
