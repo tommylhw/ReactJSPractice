@@ -5,7 +5,13 @@ const ComponentStyleSheet = StyleSheet.create({
     position: 'absolute',
     top: 15,
     right: 15,
-  }
+  },
+
+  backBtn: {
+    position: 'absolute',
+    top: 15,
+    left: 15,
+  },
 });
 
 export { ComponentStyleSheet }

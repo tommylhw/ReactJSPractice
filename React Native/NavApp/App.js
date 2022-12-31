@@ -38,7 +38,7 @@ const App = () => {
           activeTintColor: 'red',
           itemStyle: { marginVertical: 30 },
         }} 
-        drawerContent={(props) => <CustomDrawer {... props} />}>
+        drawerContent={(props) => <CustomDrawer {... props} />}> 
         <Drawer.Screen name='Home' component={HomeScreen} options={drawerItemList.home} />
         <Drawer.Screen name='Menu' component={MenuNavigator} options={drawerItemList.menu} />
       </Drawer.Navigator>
@@ -69,6 +69,8 @@ const drawerOption = StyleSheet.create({
     drawerStyle: {
       width: '70%'
     },
+    activeTintColor: 'red',
+    itemStyle: { marginVertical: 30 },
   },
 
   drawerContentOptions: {

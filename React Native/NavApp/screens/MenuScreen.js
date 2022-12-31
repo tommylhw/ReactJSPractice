@@ -8,7 +8,7 @@ import { ComponentStyleSheet } from '../styles/ComponentStyleSheet';
 
 import CustomNavBtn from '../components/CustomNavBtn';
 
-const MenuScreen = () => {
+const MenuScreen = ({ navigation }) => {
 
   return ( 
     
@@ -19,28 +19,48 @@ const MenuScreen = () => {
         <View style={ComponentStyleSheet.customNavBtnContainer}><CustomNavBtn /></View>
       </View>
 
-      <ScrollView style={styles.btnContainer}>
-        <TouchableOpacity style={styles.btn}>
-          <Text>DropDownList1</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text>DropDownList2</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text>DropDownList3</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text>DropDownList4</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text>DropDownList4</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text>DropDownList4</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text>DropDownList4</Text>
-        </TouchableOpacity>
+      <ScrollView style={styles.scrollViewContainer}>
+        <View style={styles.btnContainer}>
+
+          <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('DropDownList')}>
+            <Text>Expo Picker</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Menu</Text>
+          </TouchableOpacity>
+
+        </View>
+        
       </ScrollView>
 
     </View>
@@ -67,11 +87,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 
+  scrollViewContainer: {
+    width: '100%'
+  },
+
   btnContainer: {
     flex: 1,
-    borderWidth: 2,
     width: '100%',
     padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
     flexWrap: 'wrap',
     flexDirection: 'row',
   },
@@ -83,8 +108,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     height: 100,
-    width: '100%',
-    marginTop: 20,
+    width: '40%',
+    margin: 10,
     // flex: 1,
     
   },
