@@ -12,8 +12,8 @@ const DropdownListScreen = () => {
   const [selectedItem, setSelectedItem] = useState();
   const pickerRef = useRef();
 
-  const openPicker = () => pickerRef.current.focus();
-  const closePicker = () => pickerRef.current.blur();
+  // const openPicker = () => pickerRef.current.focus();
+  // const closePicker = () => pickerRef.current.blur();
 
   return ( 
     <View style={styles.container}>
@@ -30,9 +30,13 @@ const DropdownListScreen = () => {
           ref={pickerRef}
           selectedValue={selectedItem}
           onValueChange={(itemValue, itemIndex) => setSelectedItem(itemValue)}
+          style={styles.pickerContainer}
+          mode='dialog'
+          prompt='Select Here' // this only works with dialog mode
+          dropdownIconColor='#1684fd'
         >
-          <Picker.Item label='Item01' value="Item01" />
-          <Picker.Item label='Item02' value="Item02" />
+          <Picker.Item label='Item01' value="Item01" color='red' />
+          <Picker.Item label='Item02' value="Item02" color='blue'/>
         </Picker>
       </View>
     </View>
@@ -55,6 +59,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  pickerContainer: {
+    width: '80%',
+    height: 50,
+    backgroundColor: '#d8d8d8',
   },
 })
 
