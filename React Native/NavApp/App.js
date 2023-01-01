@@ -4,6 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
+// import { Provider as PaperProvider } from 'react-native-paper';
 
 
 import CustomDrawer from './components/CustomDrawer';
@@ -11,7 +12,8 @@ import CustomDrawer from './components/CustomDrawer';
 import HomeScreen from './screens/HomeScreen';
 import MenuScreen from './screens/MenuScreen';
 
-import DropdownListScreen from './screens/DropdownListScreen';
+import ExpoPicker from './screens/ExpoPicker';
+import RNElementKit from './screens/RNElementKit';
 
 const MenuNavigator = () => {
 
@@ -20,7 +22,8 @@ const MenuNavigator = () => {
   return (
       <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name='Menu' component={MenuScreen} />
-        <Stack.Screen name='DropDownList' component={DropdownListScreen} />
+        <Stack.Screen name='ExpoPicker' component={ExpoPicker} />
+        <Stack.Screen name='RNElementKit' component={RNElementKit} />
       </Stack.Navigator>
   )
 }

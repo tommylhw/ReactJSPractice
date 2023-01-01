@@ -22,41 +22,41 @@ const MenuScreen = ({ navigation }) => {
       <ScrollView style={styles.scrollViewContainer}>
         <View style={styles.btnContainer}>
 
-          <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('DropDownList')}>
+          <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('ExpoPicker')}>
             <Text>Expo Picker</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btn}>
-            <Text>Menu</Text>
+          <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('RNElementKit')}>
+            <Text style={styles.btnText}>React Native Element UI Toolkit</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btn}>
-            <Text>Menu</Text>
+            <Text style={styles.btnText}>Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btn}>
-            <Text>Menu</Text>
+            <Text style={styles.btnText}>Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btn}>
-            <Text>Menu</Text>
+            <Text style={styles.btnText}>Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btn}>
-            <Text>Menu</Text>
+            <Text style={styles.btnText}>Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btn}>
-            <Text>Menu</Text>
+            <Text style={styles.btnText}>Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btn}>
-            <Text>Menu</Text>
+            <Text style={styles.btnText}>Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btn}>
-            <Text>Menu</Text>
+            <Text style={styles.btnText}>Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btn}>
-            <Text>Menu</Text>
+            <Text style={styles.btnText}>Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btn}>
-            <Text>Menu</Text>
+            <Text style={styles.btnText}>Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btn}>
-            <Text>Menu</Text>
+            <Text style={styles.btnText}>Menu</Text>
           </TouchableOpacity>
 
         </View>
@@ -112,6 +112,10 @@ const styles = StyleSheet.create({
     margin: 10,
     // flex: 1,
     
+  },
+
+  btnText: {
+    textAlign: 'center',
   },
 });
 

@@ -7,7 +7,7 @@ import { ComponentStyleSheet } from '../styles/ComponentStyleSheet';
 
 import BackBtn from '../components/Backbtn';
 
-const DropdownListScreen = () => {
+const ExpoPicker = () => {
 
   const [selectedItem, setSelectedItem] = useState();
   const pickerRef = useRef();
@@ -19,13 +19,14 @@ const DropdownListScreen = () => {
     <View style={styles.container}>
       {/* header */}
       <View style={styles.header}>
+      <Text style={styles.headerText}>Expo Picker</Text>
         <View style={ComponentStyleSheet.backBtn}><BackBtn /></View>
+        
       </View>
       
 
       {/* body */}
       <View style={styles.body}>
-        <Text>Picker</Text>
         <Picker
           ref={pickerRef}
           selectedValue={selectedItem}
@@ -52,7 +53,13 @@ const styles = StyleSheet.create({
   header: {
     // borderWidth: 2,
     width: '100%',
-    height: 50,
+    // height: 50,
+  },
+
+  headerText: {
+    marginVertical: 15,
+    fontSize: 20,
+    marginLeft: 50,
   },
 
   body: {
@@ -68,4 +75,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default DropdownListScreen;
+export default ExpoPicker;
