@@ -24,8 +24,8 @@ const RNElementKit = () => {
         <Divider width={1} color='red' style={styles.divider} subHeader='Button' />
 
         <View>
-          <Button title="Solid" />
-          <Button title="Outline" type="outline" />
+          <Button title="Solid" color='warning' />
+          <Button title="Outline" type="outline" color='primary' />
           <Button title="Clear" type="clear" />
         </View>
         
